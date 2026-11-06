@@ -324,7 +324,7 @@ personal-research-agents/
 
 ## Training deck
 
-A 25-slide deck with speaker notes for running a team seminar is in [`docs/personal-research-agents_seminar.pptx`](docs/personal-research-agents_seminar.pptx). It covers the origin story, how the system works, step-by-step setup, and daily use.
+A 43-slide deck with speaker notes for running a team seminar is in [`docs/personal-research-agents_seminar.pptx`](docs/personal-research-agents_seminar.pptx). It covers the origin story and how the system works, then 20 step-by-step demo slides (what to do, what to type, what you will see) for setup and a full project, plus troubleshooting and a cheat sheet.
 
 <p align="center">
   <img src="docs/images/team.png" alt="Orchestrator and team slide" width="48%">
