@@ -1,0 +1,24 @@
+# Keep personal content out of any shared copy of the template
+soul.md.local
+config.md.local
+inbox/**
+!inbox/README.md
+!inbox/manuscripts/
+inbox/manuscripts/**
+!inbox/manuscripts/README.md
+vault/sources/**
+!vault/sources/README.md
+!vault/sources/manifest.md
+vault/people/**
+!vault/people/_template-person.md
+vault/knowledge/**
+!vault/knowledge/_template-knowledge.md
+.backups/**
+!.backups/README.md
+projects/*
+!projects/README.md
+!projects/_template-project/
+!projects/_archive/
+projects/_archive/*
+!projects/_archive/README.md
+.DS_Store
