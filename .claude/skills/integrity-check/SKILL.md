@@ -10,7 +10,7 @@ Nothing is "done" until this check passes. Output: `projects/<name>/reviews/inte
 ## 1. Citations (always)
 Run:
 ```
-python3 .claude/scripts/cite_check.py --library <export from config.md> --draft <manuscript or draft> --out projects/<name>/refs-check.tmp.md
+python3 .claude/scripts/cite_check.py --library <export from the project's CLAUDE.md > Reference library, or config.md> --draft <manuscript or draft> --out projects/<name>/refs-check.tmp.md
 ```
 Copy the summary into `refs.md` > Citation check. Any NOT IN LIBRARY, NO FULL TEXT or AMBIGUOUS result is a FAIL.
 

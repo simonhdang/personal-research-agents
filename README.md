@@ -128,7 +128,7 @@ flowchart LR
     C --> D[Citable<br/>the Writer may use it]
 ```
 
-- The Librarian always checks **your** library first.
+- The Librarian always checks **your** library first. With EndNote you can keep **one library per project**: the `.enl` file, its `.Data` folder, and an XML export live in the project's `library/` folder, which agents can read but never change.
 - Legal open-access PDFs are downloaded for you; everything else goes on your to-download list.
 - EndNote drafts use record-number citations such as `{Dang, 2024 #312}`, so a citation can't point to a record that doesn't exist. Cite While You Write formats them.
 - `/cite-check` runs a script that reads EndNote XML, RIS, BibTeX, and CSL JSON exports. It flags anything missing, ambiguous, or without full text.
@@ -141,7 +141,7 @@ flowchart LR
 
 | Blocked | Asks you first | Allowed |
 |---|---|---|
-| Editing originals (inbox, sources, raw data) | Any change to `soul.md` or your owner files | Reading files and searching literature |
+| Editing originals (inbox, sources, raw data, reference libraries) | Any change to `soul.md` or your owner files | Reading files and searching literature |
 | Editing an existing manuscript version | Installing software packages | Writing drafts and new tracked-change versions |
 | Deleting files | Excluding cases or transforming variables | Running analyses on your own computer |
 | Sending, deleting, or sharing through Gmail, Notion, or Drive | Adding a response letter to the ledger | Updating lessons, logs, and Notion |
@@ -281,7 +281,7 @@ Local files stay the source of truth. You can edit the deadline, priority, or bl
 
    Everything is drafted first and saved only after you approve it.
 
-4. **Start a study** with `/new-project`. After that, just tell the Orchestrator what you need.
+4. **Start a study** with `/new-project`. It also sets up the project's reference library: copy your EndNote `.enl` and `.Data` folder into the project's `library/` folder and export it as XML (see `projects/_template-project/library/README.md`). After that, just tell the Orchestrator what you need.
 
 The full walkthrough is in [GETTING-STARTED.md](GETTING-STARTED.md).
 
@@ -299,7 +299,7 @@ personal-research-agents/
 ├── inbox/               drop anything new here, then /update
 ├── vault/               cross-project knowledge (see above)
 ├── projects/
-│   ├── _template-project/   CLAUDE.md, status, refs, data/raw (read-only), analysis,
+│   ├── _template-project/   CLAUDE.md, status, refs, library/ (read-only), data/raw (read-only), analysis,
 │   │                        manuscript versions, reviews, submissions/_drop + round-N
 │   └── _archive/            closed projects and past manuscripts
 ├── docs/                training deck and images
@@ -324,7 +324,7 @@ personal-research-agents/
 
 ## Training deck
 
-A 43-slide deck with speaker notes for running a team seminar is in [`docs/personal-research-agents_seminar.pptx`](docs/personal-research-agents_seminar.pptx). It covers the origin story and how the system works, then 20 step-by-step demo slides (what to do, what to type, what you will see) for setup and a full project, plus troubleshooting and a cheat sheet.
+A 44-slide deck with speaker notes for running a team seminar is in [`docs/personal-research-agents_seminar.pptx`](docs/personal-research-agents_seminar.pptx). It covers the origin story and how the system works, then 21 step-by-step demo slides (what to do, what to type, what you will see) for setup and a full project, plus troubleshooting and a cheat sheet.
 
 <p align="center">
   <img src="docs/images/team.png" alt="Orchestrator and team slide" width="48%">

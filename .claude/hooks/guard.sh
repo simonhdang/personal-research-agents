@@ -25,6 +25,7 @@ check_path() {   # $1 = absolute or relative path being written
     vault/sources/*) block "vault/sources/ holds untouched originals; copy files in with cp instead of editing." ;;
     inbox/*) block "inbox/ files are originals; never edit them." ;;
     projects/*/data/raw/*) block "data/raw/ is read-only; write cleaned data to data/clean/." ;;
+    projects/*/library/*) block "library/ holds the researcher's reference library and its export; agents may read it but never change it." ;;
     projects/*/manuscript/*)
       if [ -e "$p" ]; then block "Never edit an existing manuscript version; create manuscript_v{N+1}_mmddyyyy.docx with .claude/scripts/docx_tracked.py."; fi ;;
   esac
@@ -41,8 +42,11 @@ case "$TOOL" in
       block "Deleting is not allowed. Move unwanted files to an _archive/ folder instead."
     fi
     if printf '%s' "$CMD" | grep -Eq 'git[[:space:]]+push|--dangerously'; then block "Not allowed: $CMD"; fi
+    if printf '%s' "$CMD" | grep -Eq '(^|[;&|[:space:]])(mv|cp)[[:space:]].*projects/[^[:space:]]+/library/[^[:space:]]*[[:space:]]*$'; then
+      block "Agents may not move or copy files into or out of a project's library/; the researcher manages the reference library."
+    fi
     if printf '%s' "$CMD" | grep -Eq '(sed[[:space:]]+-i|tee[[:space:]]|truncate|>[^&]|perl[[:space:]]+-pi)'; then
-      if printf '%s' "$CMD" | grep -Eq '(vault/sources/[^m ]|inbox/|data/raw/)'; then block "Shell write to a protected original (inbox/, vault/sources/, data/raw/)."; fi
+      if printf '%s' "$CMD" | grep -Eq '(vault/sources/[^m ]|inbox/|data/raw/|/library/)'; then block "Shell write to a protected original (inbox/, vault/sources/, data/raw/, library/)."; fi
       if printf '%s' "$CMD" | grep -Eq '(soul\.md|vault/owner/)'; then ask "Shell command changes an owner-only file (soul.md or vault/owner/). Approve only if you asked for it."; fi
     fi
     ;;

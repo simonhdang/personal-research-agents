@@ -7,10 +7,16 @@ description: Read the researcher's reference manager (EndNote, Zotero or Mendele
 
 The manager in use is set in `config.md` > Reference manager. Always check the library first before searching elsewhere.
 
+## Where the library is
+- **One library per project** (recommended for EndNote): the `.enl` file, its `.Data/` folder and the XML export live in `projects/<name>/library/`, or at the path recorded in the project's `CLAUDE.md` > Reference library when the library is kept outside a cloud-synced folder.
+- **One shared library**: its path and export are in `config.md`; the project's group or collection is named in the project's `CLAUDE.md`.
+- `library/` is read-only for agents. Never open, save, compact or modify a `.enl` file or its `.Data` folder; read the export and the PDFs only. Ask the researcher to re-export when the export is older than the draft or task.
+- Record numbers belong to one library. Never mix `#RecNum` citations from two libraries in one manuscript.
+
 ## Reading the library
 | Manager | How to read | Full text visible? |
 |---|---|---|
-| EndNote | The XML export named in config.md (File > Export > XML). Ask the researcher to refresh it when it is older than the current task, or read a read-only copy of the `.enl` library's `.Data` folder for attached PDFs | Yes: `internal-pdf://` attachments |
+| EndNote | The XML export in the project's `library/` (or named in config.md for a shared library), made with File > Export > XML. Attached PDFs are read from the library's `.Data/PDF/` folder, read-only | Yes: `internal-pdf://` attachments |
 | Zotero | Zotero 7 local API (`http://localhost:23119/api/users/0/items`, enabled in Zotero Settings > Advanced) or the Better BibTeX auto-export `.bib` | Yes: attachment items / `file` field |
 | Mendeley | BibTeX or RIS export named in config.md | Partly: `file` field if exported |
 

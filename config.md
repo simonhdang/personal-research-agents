@@ -4,7 +4,8 @@
 
 ## Reference manager
 - Manager: <!-- EndNote | Zotero | Mendeley -->
-- Library location or export file:
+- Library layout: <!-- one library per project (projects/<name>/library/) | one shared library -->
+- Shared library location and export file (shared layout only):
 - How new records are added: <!-- EndNote/Mendeley: agent prepares .ris + PDF in projects/<name>/to-import/; Zotero: web API after approval -->
 - Citation format in Word drafts:
 

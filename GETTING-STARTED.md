@@ -37,7 +37,7 @@ Always open Claude Code at this top-level folder, then type `/setup`. It will:
 ## Day to day
 | You want to | Do this |
 |---|---|
-| Start a study | `/new-project` |
+| Start a study | `/new-project` (it walks you through copying your EndNote library into the project's `library/` folder) |
 | Add anything new (reviews, papers, data, notes, a link) | Drop it in `inbox/` or the project's `submissions/_drop/`, then `/update` |
 | Pull in outside changes (new publications, citations, journal guidelines) | `/update --refresh` |
 | Finish a project | `/close-project` |

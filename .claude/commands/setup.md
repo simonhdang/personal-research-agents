@@ -30,7 +30,12 @@ Explain the three options in one table, then ask which one they use:
 | Citations in Word | `{Author, Year #RecNum}`, formatted by Cite While You Write | `[@key]` or `{Author, Year}` | `{Author, Year}` |
 | Setup effort | Low | Medium (install Better BibTeX) | Low |
 
-Write the choice, export path and citation format to `config.md` > Reference manager. Run `python3 .claude/scripts/cite_check.py --library <export> --draft <any small .md with one citation>` to confirm the export can be read.
+Then ask how libraries are organized:
+- **One library per project** (good for EndNote): each project keeps its `.enl` + `.Data/` folder and XML export in `projects/<name>/library/`; /new-project sets it up.
+- **One shared library**: one export recorded in `config.md`; each project uses a group or collection.
+Mention the cloud-sync caution: EndNote libraries should not live in iCloud, Dropbox or OneDrive folders.
+
+Write the choice, library layout, export path (shared library only) and citation format to `config.md` > Reference manager. Run `python3 .claude/scripts/cite_check.py --library <export> --draft <any small .md with one citation>` to confirm the export can be read.
 
 ## Step 4: Gather and extract
 1. Read everything in `inbox/` (not `inbox/manuscripts/` yet): CV, LinkedIn export, own papers, slides, IRB, grants.

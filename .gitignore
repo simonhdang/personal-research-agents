@@ -22,3 +22,8 @@ projects/*
 projects/_archive/*
 !projects/_archive/README.md
 .DS_Store
+
+# Reference libraries in personal copies
+*.enl
+*.enlx
+*.Data/
